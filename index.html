@@ -9,7 +9,7 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,13 +26,25 @@
     100% {background-position: 0% 50%;}
   }
 
-  /* Profil container */
-  .profile {
+  /* Container utama */
+  .container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 900px;
+    padding: 20px;
+  }
+
+  /* Box profil & about */
+  .box {
     background: rgba(0,0,0,0.4);
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    max-width: 400px;
+    flex: 1 1 350px;
+    min-width: 300px;
   }
 
   .profile img {
@@ -65,23 +77,56 @@
     to {opacity: 1;}
   }
 
-  /* Audio player styling */
+  /* Audio player */
   audio {
     width: 100%;
     outline: none;
     border-radius: 10px;
   }
+
+  /* About Me styling */
+  .about h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+  }
 </style>
 </head>
 <body>
-  <div class="profile">
-    <img src="foto.jpg" alt="Foto Saya">
-    <h1>Bima Tri Nanda</h1>
-    <p>"Jangan takut mencoba hal baru dan teruslah berkarya!"</p>
-    <audio controls>
-      <source src="https://n.uguu.se/hMDiDvvJ.mp3" type="audio/mpeg">
-      Browser Anda tidak mendukung audio.
-    </audio>
+  <div class="container">
+    <!-- Profil -->
+    <div class="box profile">
+      <img src="foto.jpg" alt="Foto Saya">
+      <h1>Bima Tri Nanda</h1>
+      <p>"Jangan takut mencoba hal baru dan teruslah berkarya!"</p>
+      <audio controls>
+        <source src="https://n.uguu.se/hMDiDvvJ.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </div>
+
+    <!-- About Me -->
+    <div class="box about">
+      <h2>About Me</h2>
+      <p>
+        Halo! Nama saya <b>Bima Tri Nanda</b>.  
+        Saya adalah seorang yang suka mencoba hal baru, belajar teknologi, 
+        dan terus mengembangkan diri agar bisa bermanfaat bagi orang lain.  
+      </p>
+      <p>
+        Motto hidup saya adalah <i>"Belajar tanpa henti, berkarya tanpa batas."</i>  
+        Dengan semangat itu, saya percaya bahwa setiap langkah kecil bisa 
+        membawa perubahan besar di masa depan.
+      </p>
+    </div>
   </div>
 </body>
 </html>
