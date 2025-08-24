@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Profil HP</title>
+<title>Profil HP Bilingual</title>
 <style>
   body {
     margin: 0;
@@ -61,15 +61,10 @@
     100% {background-position: 100%;}
   }
 
-  .profile p {
-    font-size: 1em;
-    margin: 10px 0 15px;
-    font-style: italic;
-  }
-
   audio {
     width: 100%;
     border-radius: 8px;
+    margin-top: 10px;
   }
 
   .about h2 {
@@ -80,10 +75,16 @@
     padding-bottom: 3px;
   }
 
-  .about p {
-    font-size: 1em;
-    line-height: 1.5;
-    text-align: justify;
+  .jp {
+    color: #ffeb3b;
+    font-weight: bold;
+    margin: 5px 0 0;
+  }
+
+  .id {
+    color: #ddd;
+    font-style: italic;
+    margin: 0 0 10px;
   }
 
   /* Tombol Mode Gelap/Terang */
@@ -105,7 +106,6 @@
     background: #555;
   }
 
-  /* Mode terang */
   body.light-mode {
     background: linear-gradient(-45deg, #ffffff, #e4e4e4, #cccccc, #dddddd);
     color: #000;
@@ -136,7 +136,8 @@
     <div class="box profile">
       <img src="foto.jpg" alt="Foto Saya">
       <h1>Bima Tri Nanda</h1>
-      <p>"Jangan takut mencoba hal baru dan teruslah berkarya!"</p>
+      <p class="jp">「新しいことに挑戦することを恐れず、常に創造し続けよう！」</p>
+      <p class="id">"Jangan takut mencoba hal baru dan teruslah berkarya!"</p>
       <audio autoplay loop controls>
         <source src="https://d.uguu.se/XcyvQiqh.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung audio.
@@ -146,9 +147,13 @@
     <!-- About Me -->
     <div class="box about">
       <h2>About Me</h2>
-      <p>Halo! Nama saya <b>Bima Tri Nanda</b>.  
+      <p class="jp">こんにちは！私の名前は <b>ビマ・トリ・ナンダ</b> です。<br>
+      新しいことに挑戦すること、テクノロジーを学ぶこと、そして人々の役に立つために自分を成長させることが大好きです。</p>
+      <p class="id">Halo! Nama saya <b>Bima Tri Nanda</b>.  
       Saya suka mencoba hal baru, belajar teknologi, dan terus mengembangkan diri agar bisa bermanfaat bagi orang lain.</p>
-      <p>Motto hidup saya adalah <i>"Belajar tanpa henti, berkarya tanpa batas."</i></p>
+
+      <p class="jp">私の人生のモットーは「学びを止めず、創造を止めない」です。</p>
+      <p class="id">Motto hidup saya adalah <i>"Belajar tanpa henti, berkarya tanpa batas."</i></p>
     </div>
   </div>
 
