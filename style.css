@@ -160,6 +160,7 @@ body.light-mode .id { color: #333; }
   gap: 20px;
   justify-content: center;
 }
+
 .socials a {
   display: flex;
   align-items: center;
@@ -169,7 +170,11 @@ body.light-mode .id { color: #333; }
   font-weight: 500;
   transition: transform 0.3s;
 }
-.socials a:hover { transform: scale(1.1); }
+
+.socials a:hover { 
+  transform: scale(1.1); 
+}
+
 .socials {
   margin-top: 15px;
   display: flex;
@@ -196,6 +201,6 @@ body.light-mode .id { color: #333; }
 }
 
 .socials img {
-  width: 20px;   /* kecil */
-  height: 20px;  /* kecil */
+  width: 16px;   /* ukuran lebih kecil */
+  height: 16px;  /* ukuran lebih kecil */
 }
