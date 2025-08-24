@@ -90,3 +90,12 @@ body {
   from, to { border-color: transparent }
   50% { border-color: white; }
 }
+
+.socials img {
+  width: 32px;
+  margin: 5px;
+  transition: transform 0.3s;
+}
+.socials img:hover {
+  transform: scale(1.2);
+}
