@@ -75,3 +75,18 @@ body {
   from { box-shadow: 0 0 10px #ff6a00; }
   to { box-shadow: 0 0 25px #ee0979; }
 }
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #fff;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
