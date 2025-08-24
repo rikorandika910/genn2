@@ -206,6 +206,40 @@ body.light-mode .profile h1 {
   </a>
 </div>
 
+<style>
+.socials {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: #333; /* Warna background */
+  transition: transform 0.2s, background 0.3s;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.socials a img {
+  width: 20px; /* Ukuran ikon lebih kecil */
+  height: 20px;
+}
+
+.socials a:hover {
+  transform: scale(1.1);
+  background: #555; /* Sedikit lebih terang saat hover */
+}
+</style>
+
 <script>
   // JS Toggle Mode
   const themeToggle = document.getElementById("themeToggle");
@@ -216,6 +250,7 @@ body.light-mode .profile h1 {
 </script>
 </body>
 </html>
+
 
 
 
