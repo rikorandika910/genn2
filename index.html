@@ -194,12 +194,6 @@ body.light-mode .profile h1 {
       <p class="id">Motto hidup saya adalah <i>"Belajar tanpa henti, berkarya tanpa batas."</i></p>
     </div>
 
-  <!-- Random Quote -->
-  <div class="quote-box">
-    <p id="randomQuote"></p>
-  </div>
-</div>
-
     <!-- Social Media -->
 <div class="socials-container">
   <div class="social-card instagram">
@@ -335,49 +329,39 @@ function updateSlide() {
 }
 
 /* Quote Box */
-.quote-box {
-  margin-top: 15px;
-  padding: 12px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
-  font-style: italic;
-  font-size: 0.95em;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-</style>
+<!-- Random Quote -->
+<div class="quote-box">
+  <p id="randomQuote"></p>
+</div>
 
 <script>
-// Typing Text
-const textToType = "「新しいことに挑戦することを恐れず、常に創造し続けよう！」";
-const typingEl = document.getElementById("typingText");
+// tunggu sampai halaman siap
+window.onload = function() {
+  // Typing Text
+  const textToType = "「新しいことに挑戦することを恐れず、常に創造し続けよう！」";
+  const typingEl = document.getElementById("typingText");
 
-let i = 0;
-function typeEffect() {
-  if (i < textToType.length) {
-    typingEl.textContent += textToType.charAt(i);
-    i++;
-    setTimeout(typeEffect, 100);
+  let i = 0;
+  function typeEffect() {
+    if (i < textToType.length) {
+      typingEl.textContent += textToType.charAt(i);
+      i++;
+      setTimeout(typeEffect, 100);
+    }
   }
+  typeEffect();
+
+  // Random Quote Generator
+  const quotes = [
+    "🌟 Belajar tanpa henti, berkarya tanpa batas.",
+    "🚀 Setiap hari adalah kesempatan baru.",
+    "🔥 Jangan takut gagal, takutlah berhenti mencoba.",
+    "💡 Kreativitas adalah kunci masa depan.",
+    "✨ Hidup adalah perjalanan, nikmati setiap langkahnya."
+  ];
+
+  // pilih random quote
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("randomQuote").textContent = randomQuote;
 }
-typeEffect();
-
-// Random Quote Generator
-const quotes = [
-  "🌟 Belajar tanpa henti, berkarya tanpa batas.",
-  "🚀 Setiap hari adalah kesempatan baru.",
-  "🔥 Jangan takut gagal, takutlah berhenti mencoba.",
-  "💡 Kreativitas adalah kunci masa depan.",
-  "✨ Hidup adalah perjalanan, nikmati setiap langkahnya."
-];
-
-document.getElementById("randomQuote").textContent = quotes[Math.floor(Math.random() * quotes.length)];
 </script>
-
-
-
-
-
-
-
-
