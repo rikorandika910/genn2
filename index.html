@@ -75,21 +75,6 @@
     padding-bottom: 3px;
   }
 
-  .typewriter {
-  overflow: hidden;
-  border-right: .15em solid #fff;
-  white-space: nowrap;
-  animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
-}
-
   .jp {
     color: #ffeb3b;
     font-weight: bold;
@@ -140,6 +125,25 @@
     background: none;
     color: #ff6a00;
   }
+
+  /* Style untuk tombol sosial */
+  .socials {
+    margin-top: 15px;
+  }
+  .socials a {
+    display: inline-block;
+    margin: 8px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .socials a:hover {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.1);
+  }
 </style>
 </head>
 <body>
@@ -154,9 +158,9 @@
       <p class="jp">「新しいことに挑戦することを恐れず、常に創造し続けよう！」</p>
       <p class="id">"Jangan takut mencoba hal baru dan teruslah berkarya!"</p>
       <audio controls loop>
-  <source src="https://n.uguu.se/znHWXCuB.mp3" type="audio/mpeg">
-  Browser Anda tidak mendukung audio.
-</audio>
+        <source src="https://n.uguu.se/znHWXCuB.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+      </audio>
     </div>
 
     <!-- About Me -->
@@ -170,6 +174,12 @@
       <p class="jp">私の人生のモットーは「学びを止めず、創造を止めない」です。</p>
       <p class="id">Motto hidup saya adalah <i>"Belajar tanpa henti, berkarya tanpa batas."</i></p>
     </div>
+
+    <!-- Social Media -->
+    <div class="socials">
+      <a href="https://instagram.com/bimoy.sigma" target="_blank">📷 Instagram</a>
+      <a href="https://github.com/rikorandika910" target="_blank">💻 GitHub</a>
+    </div>
   </div>
 
 <script>
@@ -182,25 +192,3 @@
 </script>
 </body>
 </html>
-
-<div class="socials">
-  <a href="https://instagram.com/bimoy.sigma" target="_blank">📷 Instagram</a>
-  <a href="https://github.com/rikorandika910" target="_blank">💻 GitHub</a>
-</div>
-
-<style>
-.socials a {
-  display: inline-block;
-  margin: 8px;
-  padding: 8px 12px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  transition: background 0.3s, transform 0.3s;
-}
-.socials a:hover {
-  background: rgba(255,255,255,0.3);
-  transform: scale(1.1);
-}
-</style>
