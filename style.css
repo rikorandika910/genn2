@@ -47,3 +47,7 @@ body::before {
   background: rgba(0,0,0,0.3);
   z-index: -1;
 }
+
+body {
+  font-family: 'Segoe UI', 'Noto Sans JP', sans-serif;
+}
