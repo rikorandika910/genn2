@@ -132,3 +132,38 @@ body.light-mode .socials img {
 .socials img:hover {
   transform: scale(1.2);
 }
+
+.socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: transform 0.3s;
+}
+
+body.light-mode .socials a {
+  color: black; /* warna tulisan untuk mode terang */
+}
+
+.socials img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1); /* putih di dark mode */
+}
+
+body.light-mode .socials img {
+  filter: none; /* normal di light mode */
+}
+
+.socials a:hover {
+  transform: scale(1.1);
+}
