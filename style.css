@@ -47,8 +47,3 @@ body::before {
   background: rgba(0,0,0,0.3);
   z-index: -1;
 }
-
-@media (max-width: 480px) {
-  .profile h1 { font-size: 1.4em; }
-  .about p { font-size: 0.95em; }
-}
