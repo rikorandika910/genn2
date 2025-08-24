@@ -105,12 +105,46 @@
       <h1>Bima Tri Nanda</h1>
       <p>"Jangan takut mencoba hal baru dan teruslah berkarya!"</p>
       
-      <!-- Audio dari link uguu -->
-      <audio autoplay controls>
-        <source src="https://d.uguu.se/XcyvQiqh.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung audio.
-      </audio>
-    </div>
+ <!-- Audio -->
+<audio id="bg-music" autoplay muted loop>
+  <source src="https://d.uguu.se/XcyvQiqh.mp3" type="audio/mpeg">
+  Browser Anda tidak mendukung audio.
+</audio>
+
+<!-- Tombol Play untuk HP -->
+<button id="playBtn" style="display:none; margin-top:15px; padding:10px 20px; border:none; border-radius:10px; background:#ff6a00; color:#fff; font-size:16px; cursor:pointer;">
+  ▶️ Putar Musik
+</button>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const playBtn = document.getElementById("playBtn");
+
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+  }
+
+  window.addEventListener("load", () => {
+    if (isMobile()) {
+      // Mode HP
+      audio.autoplay = false;
+      audio.muted = false;
+      playBtn.style.display = "inline-block";
+    } else {
+      // Mode Desktop
+      audio.muted = false;
+      audio.play().catch(err => {
+        console.log("Autoplay diblokir:", err);
+      });
+    }
+  });
+
+  // Klik tombol play di HP
+  playBtn.addEventListener("click", () => {
+    audio.play();
+    playBtn.style.display = "none"; // tombol hilang setelah diputar
+  });
+</script>
 
     <!-- About Me -->
     <div class="box about">
@@ -122,6 +156,7 @@
   </div>
 </body>
 </html>
+
 
 
 
