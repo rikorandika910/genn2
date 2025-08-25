@@ -400,6 +400,123 @@ document.getElementById("randomQuote").textContent =
 </body>
 </html>
 
+<canvas id="sakuraCanvas"></canvas>
+
+<style>
+#sakuraCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+</style>
+
+<script>
+// Sakura Particles
+const canvas = document.getElementById("sakuraCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let petals = [];
+for (let i = 0; i < 30; i++) {
+  petals.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 5 + 3,
+    d: Math.random() * 2 + 1
+  });
+}
+
+function drawPetals() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(255,182,193,0.8)"; // warna pink sakura
+  ctx.beginPath();
+  for (let i = 0; i < petals.length; i++) {
+    let p = petals[i];
+    ctx.moveTo(p.x, p.y);
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+  }
+  ctx.fill();
+  updatePetals();
+}
+
+function updatePetals() {
+  for (let i = 0; i < petals.length; i++) {
+    let p = petals[i];
+    p.y += p.d;
+    p.x += Math.sin(p.y * 0.05);
+    if (p.y > canvas.height) {
+      petals[i] = { x: Math.random() * canvas.width, y: 0, r: p.r, d: p.d };
+    }
+  }
+}
+
+setInterval(drawPetals, 30);
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+
+<div class="box skills">
+  <h2>My Skills</h2>
+  <div class="skill">
+    <p>HTML</p>
+    <div class="bar"><span data-skill="0% pemula"></span></div>
+  </div>
+  <div class="skill">
+    <p>CSS</p>
+    <div class="bar"><span data-skill="0%"></span></div>
+  </div>
+  <div class="skill">
+    <p>JavaScript</p>
+    <div class="bar"><span data-skill="0%"></span></div>
+  </div>
+</div>
+
+<style>
+.skills .skill {
+  margin: 15px 0;
+  text-align: left;
+}
+.skills .bar {
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 18px;
+}
+.skills .bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  border-radius: 8px;
+  transition: width 2s;
+}
+</style>
+
+<script>
+// Animasi progress bar saat discroll
+const spans = document.querySelectorAll(".skills .bar span");
+
+function animateSkills() {
+  spans.forEach(span => {
+    const value = span.getAttribute("data-skill");
+    const pos = span.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 50) {
+      span.style.width = value;
+    }
+  });
+}
+
+window.addEventListener("scroll", animateSkills);
+</script>
+
 
 
 
