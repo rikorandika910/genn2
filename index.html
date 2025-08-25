@@ -344,33 +344,7 @@ body.light-mode .profile h1 {
   }
 
   /* Quote Box */
-  .quote-box {
-    margin-top: 20px;
-    padding: 12px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    font-style: italic;
-    font-size: 0.95em;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
-</head>
-<body>
-  <h1>Bima Tri Nanda</h1>
-
-  <!-- Typing text -->
-  <p id="typingText"></p>
-
-  <!-- Random Quote -->
-  <div class="quote-box">
-    <p id="randomQuote"></p>
-  </div>
-
-<script>
+  <script>
 // Typing Text
 const textToType = "「新しいことに挑戦することを恐れず、常に創造し続けよう！」";
 const typingEl = document.getElementById("typingText");
@@ -385,20 +359,19 @@ function typeEffect() {
 }
 typeEffect();
 
-// Random Quote
-const quotes = [
-  "🌟 Belajar tanpa henti, berkarya tanpa batas.",
-  "🚀 Setiap hari adalah kesempatan baru.",
-  "🔥 Jangan takut gagal, takutlah berhenti mencoba.",
-  "💡 Kreativitas adalah kunci masa depan.",
-  "✨ Hidup adalah perjalanan, nikmati setiap langkahnya."
-];
-
-document.getElementById("randomQuote").textContent = 
-  quotes[Math.floor(Math.random() * quotes.length)];
+// Quote of The Day dari API
+async function getDailyQuote() {
+  try {
+    const res = await fetch("https://zenquotes.io/api/today");
+    const data = await res.json();
+    document.getElementById("randomQuote").textContent = 
+      `"${data[0].q}" — ${data[0].a}`;
+  } catch (error) {
+    document.getElementById("randomQuote").textContent = "Gagal memuat quote 😢";
+  }
+}
+getDailyQuote();
 </script>
-</body>
-</html>
 
 <canvas id="sakuraCanvas"></canvas>
 
@@ -516,6 +489,7 @@ function animateSkills() {
 
 window.addEventListener("scroll", animateSkills);
 </script>
+
 
 
 
