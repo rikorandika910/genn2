@@ -359,19 +359,31 @@ function typeEffect() {
 }
 typeEffect();
 
-// Quote of The Day dari API
+// Quotes lokal sebagai cadangan
+const localQuotes = [
+  "🌟 Belajar tanpa henti, berkarya tanpa batas.",
+  "🚀 Setiap hari adalah kesempatan baru.",
+  "🔥 Jangan takut gagal, takutlah berhenti mencoba.",
+  "💡 Kreativitas adalah kunci masa depan.",
+  "✨ Hidup adalah perjalanan, nikmati setiap langkahnya."
+];
+
+// Ambil quote dari API ZenQuotes
 async function getDailyQuote() {
   try {
-    const res = await fetch("https://zenquotes.io/api/today");
+    const res = await fetch("https://zenquotes.io/api/random"); // pakai random biar aman
     const data = await res.json();
     document.getElementById("randomQuote").textContent = 
       `"${data[0].q}" — ${data[0].a}`;
   } catch (error) {
-    document.getElementById("randomQuote").textContent = "Gagal memuat quote 😢";
+    // fallback
+    document.getElementById("randomQuote").textContent = 
+      localQuotes[Math.floor(Math.random() * localQuotes.length)];
   }
 }
 getDailyQuote();
 </script>
+
 
 <canvas id="sakuraCanvas"></canvas>
 
@@ -489,6 +501,7 @@ function animateSkills() {
 
 window.addEventListener("scroll", animateSkills);
 </script>
+
 
 
 
