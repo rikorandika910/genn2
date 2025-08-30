@@ -204,3 +204,15 @@ body.light-mode .id { color: #333; }
   width: 16px;   /* ukuran lebih kecil */
   height: 16px;  /* ukuran lebih kecil */
 }
+-------------------
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  animation: spin 10s linear infinite; /* auto muter */
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
